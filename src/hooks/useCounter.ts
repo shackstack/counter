@@ -4,10 +4,11 @@ interface Props {
   stepper: number;
   start?: number;
   end?: number;
+  initialCount?: number;
 }
 
-const useCounter = ({ stepper, start, end }: Props) => {
-  const [count, setCount] = useState<number>(0);
+const useCounter = ({ stepper, start, end, initialCount = 0 }: Props) => {
+  const [count, setCount] = useState<number>(initialCount);
 
   const onIncrement = () => {
     if (!end) {
