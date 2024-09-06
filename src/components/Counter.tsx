@@ -1,7 +1,7 @@
 import './Counter.css';
 
 interface CounterProps {
-  value: number;
+  value: string;
   onIncrement: () => void;
   onDecrement: () => void;
 }

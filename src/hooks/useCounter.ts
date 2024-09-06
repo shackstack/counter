@@ -5,9 +5,16 @@ interface Props {
   start?: number;
   end?: number;
   initialCount?: number;
+  toFixed?: number;
 }
 
-const useCounter = ({ stepper, start, end, initialCount = 0 }: Props) => {
+const useCounter = ({
+  stepper,
+  start,
+  end,
+  initialCount = 0,
+  toFixed = 0,
+}: Props) => {
   const [count, setCount] = useState<number>(initialCount);
 
   const onIncrement = () => {
@@ -32,7 +39,7 @@ const useCounter = ({ stepper, start, end, initialCount = 0 }: Props) => {
     setCount((prev) => prev - stepper);
   };
 
-  return { value: count, onIncrement, onDecrement };
+  return { value: count.toFixed(toFixed), onIncrement, onDecrement };
 };
 
 export default useCounter;
