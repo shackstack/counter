@@ -18,7 +18,7 @@ const useCounter = ({
   const [count, setCount] = useState<number>(initialCount);
 
   const onIncrement = () => {
-    if (!end) {
+    if (end === undefined) {
       setCount((prev) => prev + stepper);
       return;
     }
@@ -29,7 +29,7 @@ const useCounter = ({
   };
 
   const onDecrement = () => {
-    if (!start) {
+    if (start === undefined) {
       setCount((prev) => prev - stepper);
       return;
     }
